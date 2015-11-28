@@ -157,7 +157,7 @@
   {
     if ( x instanceof Neuro.Model ) 
     {
-      return '[' + x.$db.className + ':' + x.$db.toString( x ) + '] ';
+      return '[' + x.$db.className + ':' + x.$db.summarize( x ) + '] ';
     }
     if ( x instanceof Neuro.Database ) 
     {
