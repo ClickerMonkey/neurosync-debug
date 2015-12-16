@@ -6,7 +6,7 @@
     return;
   }
 
-  var eventToDescription = 
+  Neuro.debugMap = 
   {
     /* Neuro */
     0:  'Created',
@@ -91,7 +91,6 @@
     /**/
     /* Has One Relationship */
     49: 'Model ninja removed',
-    50: 'Model ninja saved',
     51: 'Initial pulled from model',
     52: 'Initial value loaded',
     53: 'Initialized',
@@ -102,6 +101,8 @@
     58: 'Clear key',
     59: 'Set key',
     60: 'Loaded',
+    111:'Query',
+    112:'Query results',
     /**/
     /* Belongs To Relationship */
     61: 'Initialized',
@@ -115,6 +116,8 @@
     70: 'Clear key',
     71: 'Set key',
     72: 'Loaded',
+    113:'Query',
+    114:'Query results',
     /**/
     /* Has Many Relationship */
     74: 'Initialized',
@@ -131,6 +134,8 @@
     85: 'Auto-saving',
     86: 'Pre-remove',
     87: 'Post-save',
+    115:'Query',
+    116:'Query results',
     /**/
     /* Has Many Through Relationship */
     88: 'Initialized',
@@ -149,7 +154,24 @@
     101:'Pre-remove',
     102:'Post-save',
     103:'Through added',
-    68: 'Through removed'
+    68: 'Through removed',
+    117:'Query',
+    118:'Query results',
+    /**/
+    /* Get */
+    104:'Get local skipped',
+    105:'Get local',
+    106:'Get local error',
+    107:'Get remote',
+    108:'Get remote error',
+    /**/
+    /* Has Remote Relationship */
+    50: 'Initialized',
+    121:'Models sorted',
+    109:'Model ninja removed',
+    110:'Model ninja saved',
+    119:'Query',
+    120:'Query results'
     /**/
   };
 
@@ -223,7 +245,7 @@
       return;
     }
 
-    if ( eventType in eventToDescription ) 
+    if ( eventType in Neuro.debugMap ) 
     {
       var args = Array.prototype.slice.call( arguments, 1 ); 
 
@@ -240,7 +262,7 @@
       }
 
       var context = findContext( source, args );
-      var description = eventToDescription[ eventType ];
+      var description = Neuro.debugMap[ eventType ];
 
       if ( Neuro.debugTrace )
       {
