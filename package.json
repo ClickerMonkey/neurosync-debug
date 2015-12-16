@@ -1,6 +1,6 @@
 {
   "name": "neurosync-debug",
-  "version": "0.2.0",
+  "version": "1.0.1",
   "description": "A neurosync binding to console - implementing Neuro.debug",
   "author": "Philip Diffenderfer",
   "license": "MIT",
