@@ -1,18 +1,18 @@
 {
-  "name": "neurosync-debug",
+  "name": "rekord-debug",
   "version": "1.0.1",
-  "homepage": "https://github.com/ClickerMonkey/neurosync-debug",
+  "homepage": "https://github.com/Rekord/rekord-debug",
   "authors": [
     "Philip Diffenderfer <pdiffenderfer@gmail.com>"
   ],
-  "description": "A neurosync binding to console - implementing Neuro.debug",
-  "main": "build/neurosync-debug.js",
+  "description": "A rekord binding to console - implementing Rekord.debug",
+  "main": "build/rekord-debug.js",
   "keywords": [
     "javascript",
     "orm",
     "offline",
     "realtime",
-    "neurosync",
+    "rekord",
     "debug"
   ],
   "license": "MIT",

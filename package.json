@@ -1,12 +1,12 @@
 {
-  "name": "neurosync-debug",
+  "name": "rekord-debug",
   "version": "1.0.1",
-  "description": "A neurosync binding to console - implementing Neuro.debug",
+  "description": "A rekord binding to console - implementing Rekord.debug",
   "author": "Philip Diffenderfer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ClickerMonkey/neurosync-debug.git"
+    "url": "git://github.com/Rekord/rekord-debug.git"
   },
   "devDependencies": {
     "gulp": "^3.8.10",

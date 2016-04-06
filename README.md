@@ -1,5 +1,5 @@
-# neurosync-debug
+# rekord-debug
 
-A neurosync binding to console - implementing Neuro.debug.
+A rekord binding to console - implementing Rekord.debug.
 
-The easiest way to install is by using bower via `bower install neurosync-debug`.
+The easiest way to install is by using bower via `bower install rekord-debug`.

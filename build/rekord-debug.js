@@ -1,4 +1,4 @@
-(function(Neuro)
+(function(Rekord)
 {
 
   if ( !window.console ) 
@@ -6,9 +6,9 @@
     return;
   }
 
-  Neuro.debugMap = 
+  Rekord.debugMap = 
   {
-    /* Neuro */
+    /* Rekord */
     0:  'Created',
     /**/
     /* REST */
@@ -177,19 +177,19 @@
 
   function getContext(x) 
   {
-    if ( x instanceof Neuro.Model ) 
+    if ( x instanceof Rekord.Model ) 
     {
       return '[' + x.$db.className + ':' + x.$db.summarize( x ) + '] ';
     }
-    if ( x instanceof Neuro.Database ) 
+    if ( x instanceof Rekord.Database ) 
     {
       return '[' + x.className + '] ';
     }
-    if ( x instanceof Neuro.Relation )
+    if ( x instanceof Rekord.Relation )
     {
       return '[' + x.database.className + ':' + x.type + ':' + x.model.Database.className + '] ';
     }
-    if ( x instanceof Neuro.Operation )
+    if ( x instanceof Rekord.Operation )
     { 
       return '[' + x.type + '] ';
     }
@@ -216,62 +216,62 @@
       }
     }
 
-    return '[Neuro] ';
+    return '[Rekord] ';
   }
 
-  Neuro.debugExclude = [];
+  Rekord.debugExclude = [];
 
-  Neuro.debugInclude = false;
+  Rekord.debugInclude = false;
 
-  Neuro.debugNoData = [];
+  Rekord.debugNoData = [];
 
-  Neuro.debugWithData = false;
+  Rekord.debugWithData = false;
 
-  Neuro.debugTrace = false;
+  Rekord.debugTrace = false;
 
-  Neuro.debugStyle = 'color:blue; font-weight:bold';
+  Rekord.debugStyle = 'color:blue; font-weight:bold';
 
-  Neuro.debug = function(eventType, source) 
+  Rekord.debug = function(eventType, source) 
   {
-    if ( Neuro.debugInclude !== false )
+    if ( Rekord.debugInclude !== false )
     {
-      if ( Neuro.indexOf( Neuro.debugInclude, eventType ) === false )
+      if ( Rekord.indexOf( Rekord.debugInclude, eventType ) === false )
       {
         return;
       }
     }
-    else if ( Neuro.indexOf( Neuro.debugExclude, eventType ) !== false )
+    else if ( Rekord.indexOf( Rekord.debugExclude, eventType ) !== false )
     {
       return;
     }
 
-    if ( eventType in Neuro.debugMap ) 
+    if ( eventType in Rekord.debugMap ) 
     {
       var args = Array.prototype.slice.call( arguments, 1 ); 
 
-      if ( Neuro.debugWithData !== false )
+      if ( Rekord.debugWithData !== false )
       {
-        if ( Neuro.indexOf( Neuro.debugWithData, eventType ) === false )
+        if ( Rekord.indexOf( Rekord.debugWithData, eventType ) === false )
         {
           args = [];
         }
       }
-      else if ( Neuro.indexOf( Neuro.debugNoData, eventType ) !== false )
+      else if ( Rekord.indexOf( Rekord.debugNoData, eventType ) !== false )
       {
         args = [];
       }
 
       var context = findContext( source, args );
-      var description = Neuro.debugMap[ eventType ];
+      var description = Rekord.debugMap[ eventType ];
 
-      if ( Neuro.debugTrace )
+      if ( Rekord.debugTrace )
       {
         args.push( new Error() );
       }
 
       if ( args.length && console.groupCollapsed )
       {
-        console.groupCollapsed( '%c' + context + description, Neuro.debugStyle );
+        console.groupCollapsed( '%c' + context + description, Rekord.debugStyle );
         for (var i = 0; i < args.length; i++) {
           console.log( args[i] );
         }
@@ -279,14 +279,14 @@
       }
       else
       {
-        console.log( '%c' + context + description, Neuro.debugStyle );        
+        console.log( '%c' + context + description, Rekord.debugStyle );        
       }
     }
     else
     {
       if ( arguments.length > 1 && console.groupCollapsed )
       {
-        console.groupCollapsed( '%c' + arguments[0], Neuro.debugStyle );
+        console.groupCollapsed( '%c' + arguments[0], Rekord.debugStyle );
         for (var i = 1; i < arguments.length; i++) {
           console.log( arguments[ i ] );
         }
@@ -299,4 +299,4 @@
     }
   };
 
-})( Neuro );
+})( Rekord );
