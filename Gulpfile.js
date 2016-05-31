@@ -13,7 +13,7 @@ var build = {
   minified: 'rekord-debug.min.js',
   output: './build/',
   include: [
-    './src/rekord-debug.js'
+    './src/debug.js'
   ]
 };
 
