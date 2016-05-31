@@ -23,5 +23,8 @@
     "gulp-util": "^3.0.4",
     "gulp-watch": "^4.3.6",
     "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "rekord": "^1.2.0"
   }
 }
