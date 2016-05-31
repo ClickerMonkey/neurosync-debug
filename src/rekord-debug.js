@@ -1,12 +1,14 @@
-(function(Rekord)
+(function(global, Rekord)
 {
 
-  if ( !window.console ) 
+  if ( !global.console )
   {
     return;
   }
 
-  Rekord.debugMap = 
+  var console = global.console;
+
+  Rekord.debugMap =
   {
     /* Rekord */
     0:  'Created',
@@ -158,13 +160,6 @@
     117:'Query',
     118:'Query results',
     /**/
-    /* Get */
-    104:'Get local skipped',
-    105:'Get local',
-    106:'Get local error',
-    107:'Get remote',
-    108:'Get remote error',
-    /**/
     /* Has Remote Relationship */
     50: 'Initialized',
     121:'Models sorted',
@@ -175,13 +170,13 @@
     /**/
   };
 
-  function getContext(x) 
+  function getContext(x)
   {
-    if ( x instanceof Rekord.Model ) 
+    if ( x instanceof Rekord.Model )
     {
       return '[' + x.$db.className + ':' + x.$db.summarize( x ) + '] ';
     }
-    if ( x instanceof Rekord.Database ) 
+    if ( x instanceof Rekord.Database )
     {
       return '[' + x.className + '] ';
     }
@@ -190,27 +185,27 @@
       return '[' + x.database.className + ':' + x.type + ':' + x.model.Database.className + '] ';
     }
     if ( x instanceof Rekord.Operation )
-    { 
+    {
       return '[' + x.type + '] ';
     }
 
     return false;
   }
 
-  function findContext(that, args) 
+  function findContext(that, args)
   {
     var c = getContext( that );
 
-    if (c !== false) 
+    if (c !== false)
     {
       return c;
     }
 
-    for (var i = 0; i < args.length; i++) 
+    for (var i = 0; i < args.length; i++)
     {
       var c = getContext( args[i] );
 
-      if ( c !== false ) 
+      if ( c !== false )
       {
         return c;
       }
@@ -231,7 +226,7 @@
 
   Rekord.debugStyle = 'color:blue; font-weight:bold';
 
-  Rekord.debug = function(eventType, source) 
+  Rekord.debug = function(eventType, source)
   {
     if ( Rekord.debugInclude !== false )
     {
@@ -245,9 +240,9 @@
       return;
     }
 
-    if ( eventType in Rekord.debugMap ) 
+    if ( eventType in Rekord.debugMap )
     {
-      var args = Array.prototype.slice.call( arguments, 1 ); 
+      var args = Array.prototype.slice.call( arguments, 1 );
 
       if ( Rekord.debugWithData !== false )
       {
@@ -279,7 +274,7 @@
       }
       else
       {
-        console.log( '%c' + context + description, Rekord.debugStyle );        
+        console.log( '%c' + context + description, Rekord.debugStyle );
       }
     }
     else
@@ -299,4 +294,4 @@
     }
   };
 
-})( Rekord );
+})( this, this.Rekord );
