@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git://github.com/Rekord/rekord-debug.git"
   },
+  "scripts": {
+    "test": "gulp js"
+  },
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-check-filesize": "^2.0.1",
