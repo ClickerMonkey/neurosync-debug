@@ -1,6 +1,6 @@
 {
   "name": "rekord-debug",
-  "version": "1.0.2",
+  "version": "1.4.0",
   "homepage": "https://github.com/Rekord/rekord-debug",
   "authors": [
     "Philip Diffenderfer <pdiffenderfer@gmail.com>"
@@ -24,6 +24,6 @@
     "tests"
   ],
   "dependencies": {
-    "rekord": "^1.2.0"
+    "rekord": "~1.4.0"
   }
 }
