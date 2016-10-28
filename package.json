@@ -1,9 +1,10 @@
 {
   "name": "rekord-debug",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A rekord binding to console - implementing Rekord.debug",
   "author": "Philip Diffenderfer",
   "license": "MIT",
+  "main": "build/rekord-debug.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/Rekord/rekord-debug.git"

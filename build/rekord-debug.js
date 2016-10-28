@@ -1,4 +1,4 @@
-/* rekord-debug 1.4.0 - A rekord binding to console - implementing Rekord.debug by Philip Diffenderfer */
+/* rekord-debug 1.4.1 - A rekord binding to console - implementing Rekord.debug by Philip Diffenderfer */
 (function(global, Rekord)
 {
 
