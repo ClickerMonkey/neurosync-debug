@@ -1,6 +1,6 @@
 {
   "name": "rekord-debug",
-  "version": "1.5.0",
+  "version": "1.5.6",
   "description": "A rekord binding to console - implementing Rekord.debug",
   "author": "Philip Diffenderfer",
   "license": "MIT",
@@ -28,6 +28,6 @@
     "jshint": "^2.9.2"
   },
   "dependencies": {
-    "rekord": "~1.5.0"
+    "rekord": "~1.5.6"
   }
 }

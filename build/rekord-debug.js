@@ -1,4 +1,4 @@
-/* rekord-debug 1.5.0 - A rekord binding to console - implementing Rekord.debug by Philip Diffenderfer */
+/* rekord-debug 1.5.6 - A rekord binding to console - implementing Rekord.debug by Philip Diffenderfer */
 // UMD (Universal Module Definition)
 (function (root, factory)
 {
